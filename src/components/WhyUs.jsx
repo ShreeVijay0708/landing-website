@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyUs = () => {
   return (
-    <div className="md:mx-32 mx-4 md:flex pt-10" id="whyus">
+    <div className="md:mx-32 mx-4 md:flex pt-16" id="whyus">
       <div className="md:w-1/2 flex flex-col">
         <h1 className="md:mx-24 md:text-7xl text-center md:text-left text-5xl font-bold">Why Us?</h1>
         <div className="mt-32 w-1/2 md:flex hidden flex-col items-end gap-10">

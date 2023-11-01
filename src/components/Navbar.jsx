@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { IoReorderThreeSharp } from "react-icons/io5";
+import { Link } from "react-scroll";
 import { RxCross2 } from "react-icons/rx";
-import {HiArrowSmUp} from "react-icons/hi"
+import { HiArrowSmUp } from "react-icons/hi";
 const Navbar = () => {
   const [open, setopen] = useState(false);
 
@@ -11,18 +12,45 @@ const Navbar = () => {
         Jithwa Solutions
       </div>
       <div className="md:flex hidden text-xl font-semibold gap-11 tracking-wide z-10 bg-transparent">
-        <a href="#vision" className="bg-transparent">
+        <Link
+          to="vision"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          className="bg-transparent cursor-pointer"
+        >
           Our Vision
-        </a>
-        <a href="#service" className="bg-transparent">
+        </Link>
+        <Link
+          to="service"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          className="bg-transparent cursor-pointer"
+        >
           Our Services
-        </a>
-        <a href="#whyus" className="bg-transparent">
+        </Link>
+        <Link
+          to="whyus"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          className="bg-transparent cursor-pointer"
+        >
           Why Us?
-        </a>
-        <a href="#contact" className="bg-transparent">
+        </Link>
+        <Link
+          to="contact"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="bg-transparent cursor-pointer"
+        >
           Contact Us
-        </a>
+        </Link>
       </div>
       <div
         className="md:hidden text-3xl cursor-default"
@@ -32,23 +60,60 @@ const Navbar = () => {
       </div>
       {open && (
         <div className="text-xl flex flex-col absolute top-24 left-0 w-full text-center font-semibold gap-11 tracking-wide bg-[#11112b]">
-          <a href="#vision" className="bg-transparent">
+          <Link
+            to="vision"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className="bg-transparent cursor-pointer"
+            onClick={()=>setopen(false)}
+          >
             Our Vision
-          </a>
-          <a href="#service" className="bg-transparent">
+          </Link>
+          <Link
+            to="service"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className="bg-transparent cursor-pointer"
+            onClick={()=>setopen(false)}
+          >
             Our Services
-          </a>
-          <a href="#whyus" className="bg-transparent">
+          </Link>
+          <Link
+            to="whyus"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+            className="bg-transparent cursor-pointer"
+            onClick={()=>setopen(false)}
+          >
             Why Us?
-          </a>
-          <a href="#contact" className="bg-transparent">
+          </Link>
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="bg-transparent cursor-pointer"
+            onClick={()=>setopen(false)}
+          >
             Contact Us
-          </a>
+          </Link>
         </div>
       )}
-      <a href="#top" className=" fixed bottom-8 right-12 text-5xl rounded-full cursor-pointer opacity-70  up">
-          <HiArrowSmUp className=" bg-transparent"/>
-      </a>
+      <Link
+        to="top"
+        spy={true}
+        smooth={true}
+        duration={500}
+        className=" fixed bottom-8 right-12 text-5xl rounded-full cursor-pointer opacity-70  up"
+      >
+        <HiArrowSmUp className=" bg-transparent" />
+      </Link>
     </div>
   );
 };

@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
+import {Link} from "react-scroll"
 import emailjs from "@emailjs/browser";
 import twitter from "../assets/twitter.svg";
 import facebook from "../assets/facebook.svg";
 import linkdn from "../assets/linkdn.svg";
 import instagram from "../assets/instagram.svg";
 import arrow2 from "../assets/arrow2.svg";
-import { Link } from "react-router-dom";
 const Footer = () => {
   const form = useRef();
   const [message, setMessage] = useState(false);
@@ -49,12 +49,45 @@ const Footer = () => {
         <div className="md:w-1/2 md:flex justify-end mr-48 gap-32 md:mt-0 mt-12">
           <div className="flex flex-col gap-4">
             <h2 className=" text-3xl font-bold">Explore</h2>
-            <a href="#vision" className="mt-2">
-              Our Vision
-            </a>
-            <a href="#service">Our Services</a>
-            <a href="#whyus">Why Us?</a>
-            <a href="#contact">Contact Us</a>
+            <Link
+          to="vision"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          className="bg-transparent cursor-pointer mt-2"
+        >
+          Our Vision
+        </Link>
+        <Link
+          to="service"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          className="bg-transparent cursor-pointer"
+        >
+          Our Services
+        </Link>
+        <Link
+          to="whyus"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          className="bg-transparent cursor-pointer"
+        >
+          Why Us?
+        </Link>
+        <Link
+          to="contact"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="bg-transparent cursor-pointer"
+        >
+          Contact Us
+        </Link>
           </div>
           {/* <div className="flex flex-col gap-7 md:mt-0 mt-12">
             <h2 className=" text-3xl font-bold">Newsletter</h2>
