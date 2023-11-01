@@ -93,11 +93,11 @@ const Contact = () => {
       </form>
       {message && (
         <div className="fixed inset-0 bg-[#969695]/[0.33] z-50 grid place-items-center px-3.5 py-1 border-none">
-          <div className="flex flex-col gap-5 h-2/6 w-4/12  rounded-xl shadow-2xl bg-[#11112b]">
-              <div className="bg-transparent flex flex-col gap-3 mx-4 my-4 items-center">
+          <div className="flex flex-col gap-5 h-2/6 md:w-4/12  rounded-xl shadow-2xl bg-[#11112b]">
+              <div className="bg-transparent text-center flex flex-col md:gap-3 gap-6 mx-4 my-4 items-center">
                 <div className="flex justify-end text-xl font-bold w-full"><AiOutlineClose onClick={()=>setMessage(false)} className=" cursor-pointer"/></div>               
-                <h2 className=" bg-transparent text-4xl font-bold spacefont mt-6">Thanks for reaching out!</h2>
-                <div className=" bg-transparent spacefont text-3xl">We will connect soon</div>
+                <h2 className=" bg-transparent text-4xl font-bold spacefont mt-6">Thanks for reaching out !</h2>
+                <div className=" bg-transparent spacefont text-2xl">We will get back to you soon.</div>
               </div>
           </div>
         </div>

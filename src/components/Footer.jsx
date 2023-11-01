@@ -6,6 +6,7 @@ import facebook from "../assets/facebook.svg";
 import linkdn from "../assets/linkdn.svg";
 import instagram from "../assets/instagram.svg";
 import arrow2 from "../assets/arrow2.svg";
+import {BiLogoLinkedin} from "react-icons/bi"
 const Footer = () => {
   const form = useRef();
   const [message, setMessage] = useState(false);
@@ -39,11 +40,11 @@ const Footer = () => {
           <div className="md:text-4xl text-3xl font-bold head z-10">
             Jithwa Solutions
           </div>
-          <div className="flex md:gap-12 gap-8 md:mt-20 mt-10 mx-4">
+          <div className="flex items-center md:gap-12 gap-8 md:mt-20 mt-10 mx-4">
             <img src={instagram} alt="" className="w-[32px] h-[32px]" />
             <img src={facebook} alt="" className="w-[32px] h-[32px]" />
             <img src={twitter} alt="" className="w-[32px] h-[32px]" />
-            <img src={linkdn} alt="" className="w-[32px] h-[32px]" />
+            <BiLogoLinkedin className="text-4xl" />
           </div>
         </div>
         <div className="md:w-1/2 md:flex justify-end mr-48 gap-32 md:mt-0 mt-12">

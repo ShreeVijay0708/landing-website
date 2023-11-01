@@ -110,7 +110,7 @@ const Navbar = () => {
         spy={true}
         smooth={true}
         duration={500}
-        className=" fixed bottom-8 right-12 text-5xl rounded-full cursor-pointer opacity-70  up"
+        className=" fixed md:bottom-8 bottom-6 md:right-12 right-6 text-5xl rounded-full cursor-pointer opacity-70  up"
       >
         <HiArrowSmUp className=" bg-transparent" />
       </Link>
