@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import {AiOutlineClose} from "react-icons/ai"
+import { AiOutlineClose } from "react-icons/ai";
 const Contact = () => {
   const form = useRef();
   const [message, setMessage] = useState(false);
-  const [name,setName]=useState("")
-  const [email,setEmail]=useState("")
-  const [messages,setMessages]=useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [messages, setMessages] = useState("");
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -21,10 +21,9 @@ const Contact = () => {
         (result) => {
           console.log(result.text);
           setMessage(true);
-          setName("")
-          setEmail("")
-          setMessages("")
-          
+          setName("");
+          setEmail("");
+          setMessages("");
         },
         (error) => {
           console.log(error.text);
@@ -57,18 +56,20 @@ const Contact = () => {
             placeholder="Your Name ..."
             className="bg-white outline-none rounded-xl p-2 text-black px-4 mt-1"
             value={name}
-            onChange={(e)=>setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
+            required
           />
         </div>
         <div className="bg-transparent flex flex-col">
           <label className="bg-transparent text-xl">Email</label>
           <input
-            type="text"
+            type="email"
             name="email"
             placeholder="Your Email-Id ..."
             className="bg-white outline-none rounded-xl p-2 text-black px-4 mt-1"
             value={email}
-            onChange={(e)=>setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <div className="bg-transparent flex flex-col ">
@@ -78,7 +79,8 @@ const Contact = () => {
             name="message"
             className=" md:h-44 h-32 resize-none outline-none bg-white rounded-xl p-2 text-black px-4 mt-1"
             value={messages}
-            onChange={(e)=>setMessages(e.target.value)}
+            onChange={(e) => setMessages(e.target.value)}
+            required
           />
         </div>
         <div className=" bg-transparent flex justify-center">
@@ -94,11 +96,22 @@ const Contact = () => {
       {message && (
         <div className="fixed inset-0 bg-[#969695]/[0.33] z-50 grid place-items-center px-3.5 py-1 border-none">
           <div className="flex flex-col gap-5 h-2/6 md:w-4/12  rounded-xl shadow-2xl bg-[#11112b]">
-              <div className="bg-transparent text-center flex flex-col md:gap-3 gap-6 mx-4 my-4 items-center">
-                <div className="flex justify-end text-xl font-bold w-full"><AiOutlineClose onClick={()=>setMessage(false)} className=" cursor-pointer"/></div>               
-                <h2 className=" bg-transparent text-4xl font-bold spacefont mt-6">Thanks for reaching out !</h2>
-                <div className=" bg-transparent spacefont text-2xl">We will get back to you soon.</div>
+            <div className="bg-transparent text-center h-full flex flex-col mx-4 my-4 items-center">
+              <div className="flex justify-end text-xl font-bold w-full">
+                <AiOutlineClose
+                  onClick={() => setMessage(false)}
+                  className=" cursor-pointer"
+                />
               </div>
+              <div className="w-full h-full gap-6 flex flex-col mt-6">
+                <h2 className=" bg-transparent text-3xl font-bold spacefont mt-6">
+                  Thanks for reaching out!
+                </h2>
+                <div className=" bg-transparent spacefont text-2xl">
+                  We will get back to you soon.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
