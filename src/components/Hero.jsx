@@ -1,5 +1,6 @@
 import React from 'react'
 import arrow from "../assets/arrow.svg"
+import {Link} from "react-scroll"
 import bg from "../assets/bg.svg"
 const Hero = () => {
   return (
@@ -13,7 +14,9 @@ const Hero = () => {
         Growing and Optimizing your business 
         through curated IT solutions. 
       </div>
-      <div className='z-10'><a href="#contact"  className='flex z-10 md:text-2xl text-xl gap-4 items-center border-2 px-6 py-4 rounded-2xl'>Let's Connect <img src={arrow} className='z-10 md:w-[100px] w-[50px]' alt=".." /></a></div> 
+      <div className='z-10'><Link to="contact" spy={true}
+            smooth={true}
+            duration={500}  className='flex z-10 cursor-pointer md:text-2xl text-xl gap-4 items-center border-2 px-6 py-4 rounded-2xl'>Let's Connect <img src={arrow} className='z-10 md:w-[100px] w-[50px]' alt=".." /></Link></div> 
     </div>
   )
 }
